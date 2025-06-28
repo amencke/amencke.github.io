@@ -15,10 +15,3 @@ kramdown:
 
 mathjax: true
 
-defaults:
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: single
-      mathjax: true
