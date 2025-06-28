@@ -1,8 +1,7 @@
 ---
 layout: home
-title: "Welcome to My Blog"
+title: "Arthur's Math Blog"
 mathjax: true
 ---
 
-This is the homepage. Here's some inline math: \\( E = mc^2 \\)
-
+This blog goes through the assignments for the [MIT OpenCourseWare Real Analysis course](https://ocw.mit.edu/courses/18-100a-real-analysis-fall-2020/).
