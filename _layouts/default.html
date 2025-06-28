@@ -1,7 +1,0 @@
-<html lang="{{ site.locale | slice: 0,2 | default: "en" }}" class="no-js"> 
-  <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
-    {% if page.use_math %}
-        {% include mathjax-custom.html %}
-    {% endif %}
-  </body>
-</html>
