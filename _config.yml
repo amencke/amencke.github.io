@@ -5,6 +5,7 @@ url: "https://amencke.github.io"
 remote_theme: "mmistakes/minimal-mistakes@4.27.1"
 
 plugins:
+  - jekyll-remote-theme
   - jekyll-include-cache
 
 markdown: kramdown
@@ -14,3 +15,10 @@ kramdown:
 
 mathjax: true
 
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      mathjax: true
