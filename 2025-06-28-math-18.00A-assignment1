@@ -1,0 +1,178 @@
+---
+layout: post
+title: "MIT OpenCourseware: Real Analysis 18.100A Assignment 1"
+date: 2025-06-27
+mathjax: true
+categories: real-analysis assignments
+---
+
+## Exercise 0.3.6: Prove
+
+**a)** \( A \cap (B \cup C) = (A \cap B) \cup (A \cap C) \)  
+**b)** \( A \cup (B \cap C) = (A \cup B) \cap (A \cup C) \)
+
+### a)
+
+If \( x \in A \cap (B \cup C) \), then \( x \in A \) and \( x \in B \) or \( x \in C \).  
+If \( x \in B \), then \( x \in A \cap B \), and if \( x \in C \), then also \( x \in A \cap C \).  
+So in either case, \( x \in (A \cap B) \cup (A \cap C) \).  
+Thus, \( A \cap (B \cup C) \subseteq (A \cap B) \cup (A \cap C) \).
+
+If \( x \in (A \cap B) \cup (A \cap C) \), then \( x \in A \cap B \) or \( x \in A \cap C \).  
+In either case \( x \in A \), and \( x \in B \) or \( x \in C \).  
+So \( x \in A \cap (B \cup C) \).  
+Thus \( (A \cap B) \cup (A \cap C) \subseteq A \cap (B \cup C) \).
+
+Since both inclusions hold, we must have equality.
+
+### b)
+
+If \( x \in A \cup (B \cap C) \), then \( x \in A \), or \( x \in B \) and \( x \in C \), or both.  
+If \( x \in A \), then also \( x \in A \cup B \), and similarly, \( x \in A \cup C \).  
+If \( x \notin A \), then \( x \in B \cap C \), which implies \( x \in B \cup A \) and \( x \in C \cup A \).  
+In both cases, \( x \in A \cup B \) and \( x \in A \cup C \).  
+Thus, \( x \in A \cup (B \cap C) \subseteq (A \cup B) \cap (A \cup C) \).
+
+If \( x \in (A \cup B) \cap (A \cup C) \), then \( x \in (A \cup B) \) and \( x \in (A \cup C) \).  
+This implies:  
+1. Either \( x \in A \), or  
+2. If \( x \notin A \), then \( x \in B \) and \( x \in C \), so \( x \in B \cap C \).  
+So \( x \in A \cup (B \cap C) \).  
+Thus \( (A \cup B) \cap (A \cup C) \subseteq A \cup (B \cap C) \).
+
+Since both inclusions hold, we must have equality.
+
+---
+
+## Exercise 0.3.11
+
+Prove by induction that \( n < 2^n \) for all \( n \in \mathbb{N} \).
+
+**Base case:** \( n = 0 \).  
+\( 0 < 2^0 = 1 \): base case holds.
+
+**Inductive step:**  
+Assume true for \( n \), prove for \( n + 1 \):  
+\[
+n + 1 < 2^{n+1} \\
+n+1 < 2 \cdot 2^n \Rightarrow \frac{n+1}{2} < 2^n
+\]
+Since \( \frac{n+1}{2} \leq n \) and \( n < 2^n \), it follows that \( \frac{n+1}{2} < 2^n \). QED.
+
+---
+
+## Exercise 0.3.12
+
+Show that for a finite set \( A \) of cardinality \( n \), the cardinality of \( \mathcal{P}(A) \) is \( 2^n \).
+
+**Inductive proof:**  
+Base case: the empty set. \( |A| = 0 \).  
+\( \mathcal{P}(A) \) contains only the empty set, so \( |\mathcal{P}(A)| = 1 = 2^0 \)
+
+Assume true for \( |A| = n \), so \( |\mathcal{P}(A)| = 2^n \).  
+When adding one more element to \( A \), each subset either includes or excludes it.  
+So the power set doubles in size:  
+\[
+|\mathcal{P}(A \cup \{a\})| = 2 \cdot 2^n = 2^{n+1}
+\]
+
+---
+
+## Exercise 0.3.15
+
+Prove that \( n^3 + 5n \) is divisible by 6 for all \( n \in \mathbb{N} \).
+
+**Base case:**  
+\( n = 1 \):  
+\[
+1^3 + 5(1) = 6 \Rightarrow 6 / 6 = 1
+\]
+Base case holds.
+
+**Inductive step:**  
+Assume true for \( n \), prove for \( n + 1 \)
+
+\[
+(n+1)^3 + 5(n+1) = n^3 + 3n^2 + 3n + 1 + 5n + 5 = n^3 + 3n^2 + 8n + 6
+\]
+
+Group the expression:
+\[
+(n^3 + 5n) + (3n^2 + 3n) + 6
+\]
+We know \( n^3 + 5n \) is divisible by 6, and so is 6.
+
+Factor:
+\[
+3n^2 + 3n = 3(n^2 + n) = 3 \cdot 2 \cdot \frac{n^2 + n}{2}
+\]
+Since \( \frac{n^2 + n}{2} \in \mathbb{N} \), the whole expression is divisible by 6.
+
+---
+
+## Exercise 0.3.19
+
+Give an example of a countably infinite collection of finite sets \( A_1, A_2, \ldots \) whose union is not finite.
+
+Example:
+\[
+\{ \{n\} : n \in \mathbb{N} \}
+\]
+Each set is finite (a singleton), but their union is \( \mathbb{N} \), which is infinite.
+
+---
+
+## Exercise 6 – Mapping Positive Rational Numbers to \( \mathbb{N} \)
+
+The most important thing to understand is that the pairs \( (p, r) \) and \( (q, s) \) must be unique.
+
+### a)
+
+\[
+\frac{4}{15} = \frac{2^2}{3 \cdot 5} \Rightarrow f(q) = 2^4 \cdot 3 \cdot 5 = 240
+\]
+
+Given \( f(q) = 108 \), we factor:  
+\[
+108 = 2^2 \cdot 3^3
+\]
+An exponent of 3 means we use the denominator version of the mapping:  
+So:  
+- \( p_1 = 2, r_1 = 1 \)  
+- \( q_1 = 3, s_1 = 2 \)
+
+Thus, \( q = \frac{2}{9} \)
+
+---
+
+### b)
+
+In plain English, we need to show two things:
+
+1. **Injectivity**: each \( q \) maps to exactly one \( f(q) \)  
+2. **Surjectivity**: for every \( f(q) \), there exists a \( q \)
+
+#### Injectivity
+
+If \( f(q_1) = f(q_2) \), then \( q_1 = q_2 \)
+
+Because the prime factorization of any natural number is unique, and \( f(q) \) is defined in terms of the unique primes and unique exponents associated with \( q \), the values \( p_n, r_i, q_m, s_j \) used in forming \( f(q) \) must also be unique.  
+Therefore, two different rationals cannot map to the same natural number: \( f \) is injective.
+
+#### Surjectivity
+
+For every natural number \( n \), some rational \( q \in \mathbb{Q}^+ \) exists such that \( f(q) = n \)
+
+From the structure of \( f(q) \), we observe:
+- Numerator primes appear with even exponents \( 2r \)  
+- Denominator primes appear with odd exponents \( 2s - 1 \)
+
+So for any \( f(q) = n \), reverse the process:
+- Let \( r_q = \text{even exponent} \Rightarrow r = r_q / 2 \)  
+- Let \( s_q = \text{odd exponent} \Rightarrow s = (s_q + 1)/2 \)
+
+Build \( q \) as:
+- Numerator = product of all \( p_i^{r_q / 2} \)
+- Denominator = product of all \( q_j^{(s_q + 1)/2} \)
+
+Then apply \( f \), and you recover \( n \). Therefore, \( f \) is surjective.

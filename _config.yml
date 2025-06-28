@@ -1,0 +1,16 @@
+title: My Blog
+baseurl: ""
+url: "https://amencke.github.io"
+
+theme: "minimal-mistakes-jekyll"
+
+plugins:
+  - jekyll-include-cache
+
+markdown: kramdown
+kramdown:
+  math_engine: mathjax
+  input: GFM
+
+mathjax: true
+
